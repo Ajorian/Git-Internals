@@ -58,5 +58,5 @@ However, when even a single bit of information changes in our working directory,
 The following picture shows a concrete example in which a new file is added to our working directory. Notably, the Blob associated with the file named class1 is referenced by both commit1 and commit2. However, it is important to observe that despite the shared Blob, there exist two distinct Trees with unique SHA-1 hashes. This distinction in Tree objects occurs due to the alteration in the file system's structure caused by the addition of the new file.
 
 <p align="center">
-    <img src="example.png" title="Commit" >
+    <img src="example.png" width="500" height="340" title="Commit" >
 </p>
