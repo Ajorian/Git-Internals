@@ -37,3 +37,15 @@ Furthermore, Git offers the capability to assign human-readable names to these p
 </p>
 
 Additionally, it is worth highlighting that a Tree can serve as a means to store the state of the Git file system by creating a comprehensive list of all existing Blobs and Trees. This crucial role of Trees becomes evident when examining Commit objects, as they rely on Trees to capture snapshots of the file system at specific points in time.
+
+## Commits
+Commits serve as objects that capture desired states in Git. Illustrated in the accompanying picture, each commit object comprises three distinct types of information:
+
+A pointer to a tree representing the captured state of the file system.
+A list of pointers to other commit objects, indicating inherited or derived states.
+Metadata, including timestamp, commit messages, authorship details, and more.
+These components collectively form a comprehensive snapshot of the Git repository at a specific point in time, enabling effective version control and tracking of changes.
+
+<p align="center">
+    <img src="commit.png" title="Commit" >
+</p>
