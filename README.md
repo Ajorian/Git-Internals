@@ -8,7 +8,7 @@ Requires [Git](https://git-scm.com/) to be installed and in the `PATH` environme
     git --version
 ````
 ## What is Git?
-Almost everyone familiar with Git would describe it as version control software or something similar. However, in this investigation, we will delve into its internal structure. From this perspective, Git can be seen as a collection of 'objects' and 'pointers' capable of forming graph structures, as depicted in the picture below. These structures are stored in nonvolatile memory.
+Almost everyone familiar with Git would describe it as version control software or something similar. However, in this investigation, we will delve into its internal structure. From this perspective, Git can be seen as a collection of `objects` and `pointers` capable of forming graph structures, as depicted in the picture below. These structures are stored in nonvolatile memory.
 
 ![Git is a collection of Objects and Pointers](graph.png)
 
