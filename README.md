@@ -53,4 +53,10 @@ These components collectively form a comprehensive snapshot of the Git repositor
 
 It is crucial to emphasize that in Git, when there are two states where some data, including Blobs and Trees, is identical, there is no need for data replication. This is because any Tree object, including the one used as a snapshot taker in a Commit object, consists of pointers to specific Blobs and other Trees.
 
-However, when even a single bit of information changes in our working directory, Git generates a new Blob with a new unique SHA-1 hash to represent that altered content. Consequently, the content of any Tree object that has a pointer to the modified Blob will be updated, leading to the creation of a new Tree object. This modification also propagates throughout all other Trees that previously pointed to the modified Tree.
+However, when even a single bit of information changes in our working directory, Git generates a new Blob with a new unique SHA-1 hash to represent that altered content. Consequently, the content of any Tree object that has a pointer to the modified Blob will be updated, leading to the creation of a new Tree object. This modification also propagates throughout all other Trees that previously pointed to the modified Tree. 
+
+The following picture shows a concrete example in which a new file is added to our working directory. Notably, the Blob associated with the file named class1 is referenced by both commit1 and commit2. However, it is important to observe that despite the shared Blob, there exist two distinct Trees with unique SHA-1 hashes. This distinction in Tree objects occurs due to the alteration in the file system's structure caused by the addition of the new file.
+
+<p align="center">
+    <img src="example.png" title="Commit" >
+</p>
