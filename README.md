@@ -14,7 +14,7 @@ Almost everyone familiar with Git would describe it as version control software 
     <img src="graph.png" width="400" height="260" title="Graph structure of Git objects" >
 </p>
 
-As you can see in the picture, we have some 'objects' (circles) with the ability to point to other objects, as well as some arrows (ptr1, ptr2, etc.) that can point to these objects. But wait! What is a pointer, and why is it important to us?
+As you can see in the picture, we have some `objects` (circles) with the ability to point to other objects, as well as some arrows or `pointers` (ptr1, ptr2, etc.) that can point to these objects. But wait! What is a pointer, and why is it important to us?
 
 In brief, a pointer is essentially a SHA-1 hash of a Git object. It holds significant importance as it appears throughout the Git internal structure, including data fields of certain objects and files such as the one that stores branches.
 
