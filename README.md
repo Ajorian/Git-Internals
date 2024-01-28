@@ -10,7 +10,7 @@ Requires [Git](https://git-scm.com/) to be installed and in the `PATH` environme
 ## What is Git?
 Almost everyone familiar with Git would describe it as version control software or something similar. However, in this investigation, we will delve into its internal structure. From this perspective, Git can be seen as a collection of `objects` and `pointers` capable of forming graph structures, as depicted in the picture below. These structures are stored in nonvolatile memory.
 
-<img src="graph.png" style="max-width: 100%; height: auto;"  />
+<img src="graph.png" style="max-width: 50%; height: auto;"  />
 
 As you can see in the picture, we have some 'objects' (circles) with the ability to point to other objects, as well as some arrows (ptr1, ptr2, etc.) that can point to these objects. But wait! What is a pointer, and why is it important to us?
 
