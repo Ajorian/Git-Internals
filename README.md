@@ -27,3 +27,13 @@ A Blob, abbreviated as Binary Large OBject, is similar to a buffer where raw dat
 <p align="center">
     <img src="blob.png" title="Blob" >
 </p>
+
+## Trees
+Indeed, a Tree in Git is distinct from a Blob. While a Blob serves as a container for raw data, a Tree does not hold any data itself. Instead, it functions as a directory or folder in a file system analogy. A Tree in Git stores a collection of pointers (SHA-1 hashes) to other Blobs and Trees, representing the contents and structure of a directory.
+Furthermore, Git offers the capability to assign human-readable names to these pointers. By combining the graph structure formed by Blobs and Trees with the use of reference names, Git can function as a highly efficient and versatile file system.
+
+<p align="center">
+    <img src="tree.png" title="Blob" >
+</p>
+
+Additionally, it is worth highlighting that a Tree can serve as a means to store the state of the Git file system by creating a comprehensive list of all existing Blobs and Trees. This crucial role of Trees becomes evident when examining Commit objects, as they rely on Trees to capture snapshots of the file system at specific points in time.
