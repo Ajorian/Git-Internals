@@ -41,9 +41,10 @@ Additionally, it is worth highlighting that a Tree can serve as a means to store
 ## Commits
 Commits serve as objects that capture desired states in Git. Illustrated in the accompanying picture, each commit object comprises three distinct types of information:
 
-A pointer to a tree representing the captured state of the file system.
-A list of pointers to other commit objects, indicating inherited or derived states.
-Metadata, including timestamp, commit messages, authorship details, and more.
+- A pointer to a tree representing the captured state of the file system.
+- A list of pointers to other commit objects, indicating inherited or derived states.
+- Metadata, including timestamp, commit messages, authorship details, and more.
+  
 These components collectively form a comprehensive snapshot of the Git repository at a specific point in time, enabling effective version control and tracking of changes.
 
 <p align="center">
