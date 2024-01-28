@@ -39,7 +39,7 @@ Furthermore, Git offers the capability to assign human-readable names to these p
 Additionally, it is worth highlighting that a Tree can serve as a means to store the state of the Git file system by creating a comprehensive list of all existing Blobs and Trees. This crucial role of Trees becomes evident when examining Commit objects, as they rely on Trees to capture snapshots of the file system at specific points in time.
 
 ## Commits
-Commits serve as objects that capture desired states in Git. Illustrated in the accompanying picture, each commit object comprises three distinct types of information:
+Commits serve as objects that capture desired states in Git. As depicted in the following picture, each commit object comprises three distinct types of information:
 
 - A pointer to a tree representing the captured state of the file system.
 - A list of pointers to other commit objects, indicating inherited or derived states.
@@ -50,3 +50,7 @@ These components collectively form a comprehensive snapshot of the Git repositor
 <p align="center">
     <img src="commit.png" title="Commit" >
 </p>
+
+It is crucial to emphasize that in Git, when there are two states where some data, including Blobs and Trees, is identical, there is no need for data replication. This is because any Tree object, including the one used as a snapshot taker in a Commit object, consists of pointers to specific Blobs and other Trees.
+
+However, when even a single bit of information changes in our working directory, Git generates a new Blob with a new unique SHA-1 hash to represent that altered content. Consequently, the content of any Tree object that has a pointer to the modified Blob will be updated, leading to the creation of a new Tree object. This modification also propagates throughout all other Trees that previously pointed to the modified Tree.
