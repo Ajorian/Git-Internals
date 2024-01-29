@@ -145,7 +145,7 @@ git status
 Upon executing the aforementioned commands, an empty repository is created. Now, to proceed further, we can add a file named a.txt with the content 'hello' in our working directory. This is illustrated in the following picture:
 
 <p align="center">
-    <img src="images/0.png" >
+    <img src="images/1.png" >
 </p>
 
 
