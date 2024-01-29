@@ -164,7 +164,16 @@ To stage the latest change, which involves adding a.txt to the staging area, the
 ````
 git update-index --add --cacheinfo 100644 ce013625030ba8dba906f756967f9e9ca394464a a.txt
 ````
-Note that ce013625030ba8dba906f756967f9e9ca394464a represents the SHA-1 hash of the created blob object. The resulting state would be as follows:
+Note that `ce013625030ba8dba906f756967f9e9ca394464a` represents the SHA-1 hash of the created blob object. The resulting state would be as follows:
 <p align="center">
     <img src="images/3.png" >
+</p>
+
+In order to commit these changes, it is necessary to create a commit object. However, a tree object is required to capture a snapshot of the current state. Therefore, first we need to use the following command to write the current state into a tree object:
+````
+git write-tree
+````
+The following picture shows the last state:
+<p align="center">
+    <img src="images/4.png" >
 </p>
