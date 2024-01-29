@@ -182,3 +182,8 @@ Now, it's time to create the commit object using the SHA-1 hash of the created t
 ````
 git commit-tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 -m “commit 1”
 ````
+The resulting state is as follows:
+
+<p align="center">
+    <img src="images/5.png" >
+</p>
