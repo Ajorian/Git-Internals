@@ -84,7 +84,12 @@ When executing the aforementioned command, the output will resemble the followin
 ce013625030ba8dba906f756967f9e9ca394464a blob 6
 ````
 
+To examine the content of each of the aforementioned objects, you can employ the command `git show OBJ_HASH`, where OBJ_HASH represents the SHA-1 hash of the desired object. For instance, running the command `git show ce013625030ba8dba906f756967f9e9ca394464a` will display the content "hello", while executing `git show 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1` will reveal the contents of 'a.txt'.
+
 Returning to the '.git' folder, open the 'HEAD' file. You will observe that its content reads 'ref: refs/heads/main', which refers to the 'main' file. Essentially, 'HEAD' serves as the entry point to our current branch, in this case, 'main'. Therefore, a branch essentially becomes a file, like 'main', that contains a pointer to a commit object.
+
+Now lets modify file a.txt and see what
+
 # Git from Scratch
 
 Having gained a brief understanding of Git's internal structure, let's proceed to create a repository from scratch.
