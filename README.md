@@ -214,7 +214,12 @@ git write-tree
 git commit-tree d4e01edf1e8aa72182ed9449e7d12b5e4df8b201 -m “commit 2” -p 28aff8f8067564e4cc1702ede730ea8d3941b4e8
 ````
 Note that the -p flag in the last command is used to set a parent for the new commit. The number `28aff8f8067564e4cc1702ede730ea8d3941b4e8` represents the SHA-1 hash of the first commit object. You can verify this by using the `git show` command.
-The resulting state is as follows:
+
+The resulting state is depicted in the following picture:
 <p align="center">
     <img src="images/7.png" >
 </p>
+
+Now lets use `git log` command to see our repositoy history. But wait why the result is not correct and we cannot see the second commit?
+````
+>git log
