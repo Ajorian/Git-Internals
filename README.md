@@ -94,9 +94,6 @@ tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1
 a.txt
 
 ````
-
-
-
 Returning to the '.git' folder, open the 'HEAD' file. You will observe that its content reads `ref: refs/heads/main`, which refers to the 'main' file. Essentially, 'HEAD' serves as the entry point to our current branch, in this case, 'main'. Therefore, a branch essentially becomes a file, like 'main', that contains a pointer to a commit object.
 
 Now, we will proceed to modify the file a.txt and observe the resulting changes. To accomplish this, execute the following commands, which will append the word 'world' to the file a.txt and commit the changes to the repository with the message 'commit 2'.
@@ -106,6 +103,19 @@ echo world >> a.txt
 git add a.txt
 git commit -m "commit 2"
 ````
+Now, when you list the objects in the database, you will notice the creation of three new objects, which consist of one blob, one tree, and one new commit. This is reflected in the following section:
+````
+git cat-file --batch-all-objects --batch-check
+094ef3623e87f414e1571141c97c7b3444d76ea4 commit 187
+183dfcf6c5f77a0f5ddaf534bb2ef96e97324513 commit 235
+2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 tree 33
+94954abda49de8615a048f8d2e64b5de848e27a1 blob 12
+ce013625030ba8dba906f756967f9e9ca394464a blob 6
+d4e01edf1e8aa72182ed9449e7d12b5e4df8b201 tree 33
+````
+
+Please note that the initial blob, sized at 12 bytes, corresponds to the modified version of a.txt, while the second blob, sized at 6 bytes, represents the first version. You can utilize the git show command to examine their contents. It is important to understand that when you modify a file in your working directory, Git does not directly modify the associated blob object or the tree objects that reference it. Instead, Git generates a new blob (with a new SHA-1 hash) and new tree(s) that utilize this new SHA-1 hash. Therefore, even if you modify just one bit of a significantly large file, Git will generate a new large blob for it while retaining both blobs.
+
 
 # Git from Scratch
 
