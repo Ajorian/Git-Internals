@@ -91,8 +91,8 @@ git show ce013625030ba8dba906f756967f9e9ca394464a
     hello
 
 git show 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 
-$${\color{red} tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 }$$
-$\color[RGB]{155,127,0} hello$
+tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 
+
 a.txt
 
 ````
