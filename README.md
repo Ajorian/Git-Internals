@@ -1,5 +1,5 @@
 # Git-Internals
-Here, I hope you can find valuable information about Git internals and gain insights into its functioning through low-level commands, commonly referred to as Git plumbing commands.
+Here, I hope you can find valuable information about Git internals and gain insights into its functioning through low-level commands, commonly referred to as Git plumbing commands. 
 
 ## Dependencies
 Requires [Git](https://git-scm.com/) to be installed and in the `PATH` environment variable. To check that open your terminal and run the following command to check your installed version of Git.
@@ -60,3 +60,17 @@ The following picture shows a concrete example in which a new file is added to o
 <p align="center">
     <img src="example.png" width="500" height="340" title="Commit" >
 </p>
+
+# Git Exploration
+
+Create a repository named `test` by following the provided high-level instructions, as you can see. This repository should consist of a file named a.txt with the content 'hello', and the commit message should be set as 'commit 1'.
+
+````
+    git init test
+    echo hello > a.txt
+    git add a.txt
+    git commit -m "commit 1"
+````
+# Git from Scratch
+
+Having gained a brief understanding of Git's internal structure, let's proceed to create a repository from scratch.
