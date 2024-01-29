@@ -211,7 +211,7 @@ echo world >> a.txt
 cat a.txt | git hash-object --stdin -w
 git update-index --add --cacheinfo 100644 94954abda49de8615a048f8d2e64b5de848e27a1 a.txt 
 git write-tree
-git commit-tree d4e01edf1e8aa72182ed9449e7d12b5e4df8b201 -m “commit 2” -p 28aff8f8067564e4cc1702ede730ea8d3941b4e8
+git commit-tree d4e01edf1e8aa72182ed9449e7d12b5e4df8b201 -m "commit 2" -p 28aff8f8067564e4cc1702ede730ea8d3941b4e8
 ````
 Note that the -p flag in the last command is used to set a parent for the new commit. The number `28aff8f8067564e4cc1702ede730ea8d3941b4e8` represents the SHA-1 hash of the first commit object. You can verify this by using the `git show` command.
 
