@@ -72,7 +72,17 @@ Create a repository named `test` by following the provided high-level instructio
     git commit -m "commit 1"
 ````
 
-Now navigate to the 'test' directory to explore its contents. Inside, you will notice a hidden folder called '.git' containing two significant subfolders: 'objects' and 'refs', along with a file named 'HEAD'. The 'objects' folder serves as a storage location for all Git objects, including blobs, trees, and commits. Conversely, the 'refs' folder stores all the pointers. Additionally, within the 'refs' folder, you will find a subfolder called 'heads', which contains a file named 'main'. Opening this file reveals a 40-digit hexadecimal number, such as '255ef93b6da3b272898b47352853b69e785820e1', which represents the SHA-1 hash of your commit object. This implies that the 'main' file points to that particular commit object.
+Now navigate to the 'test' directory to explore its contents. Inside, you will notice a hidden folder called `.git` containing two significant subfolders: `objects` and `refs`, along with a file named `HEAD`. The 'objects' folder serves as a storage location for all Git objects, including blobs, trees, and commits. Conversely, the 'refs' folder stores all the pointers. Additionally, within the 'refs' folder, you will find a subfolder called `heads`, which contains a file named 'main'. Opening this file reveals a 40-digit hexadecimal number, such as `255ef93b6da3b272898b47352853b69e785820e1`, which represents the SHA-1 hash of your commit object. This implies that the 'main' file points to that particular commit object. To view all the created objects stored within the 'object' folder, you can utilize the following command:
+````
+    git cat-file --batch-all-objects --batch-check
+````
+When executing the aforementioned command, the output will resemble the following, with the exception of the commit object. In this example, the content of the blob and tree objects remains identical across different machines worldwide, resulting in the same SHA-1 hashes. However, commit objects incorporate timestamps and distinct metadata, causing the SHA-1 hash numbers to differ on each machine.
+
+````
+094ef3623e87f414e1571141c97c7b3444d76ea4 commit 187
+2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 tree 33
+ce013625030ba8dba906f756967f9e9ca394464a blob 6
+````
 
 Returning to the '.git' folder, open the 'HEAD' file. You will observe that its content reads 'ref: refs/heads/main', which refers to the 'main' file. Essentially, 'HEAD' serves as the entry point to our current branch, in this case, 'main'. Therefore, a branch essentially becomes a file, like 'main', that contains a pointer to a commit object.
 # Git from Scratch
