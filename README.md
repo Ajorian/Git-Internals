@@ -11,7 +11,7 @@ Requires [Git](https://git-scm.com/) to be installed and in the `PATH` environme
 Almost everyone familiar with Git would describe it as version control software or something similar. However, in this investigation, we will delve into its internal structure. From this perspective, Git can be seen as a collection of `objects` and `pointers` capable of forming graph structures, as depicted in the picture below. These structures are stored in nonvolatile memory.
 
 <p align="center">
-    <img src="graph.png" width="400" height="260" title="Graph structure of Git objects" >
+    <img src="images/graph.png" width="400" height="260" title="Graph structure of Git objects" >
 </p>
 
 As you can see in the picture, we have some `objects` (circles) with the ability to point to other objects, as well as some arrows or `pointers` (ptr1, ptr2, etc.) that can point to these objects. But wait! What is a pointer, and why is it important to us?
@@ -25,7 +25,7 @@ Git has three types of objects, namely Blobs, Trees, and Commits. It's worth not
 A Blob, abbreviated as Binary Large OBject, is similar to a buffer where raw data can be stored. As the name implies, this Git object lacks any form of metadata, such as timestamps or owner information. Furthermore, it does not possess the ability to point to other objects through SHA-1 hashes. From my perspective, the most effective way to understand a Blob is to envision it as a buffer in which any type of data including text, image, binaries, ... can be stored. The following picture illustrates an imaginary Blob.
 
 <p align="center">
-    <img src="blob.png" title="Blob" >
+    <img src="images/blob.png" title="Blob" >
 </p>
 
 ## Trees
@@ -33,7 +33,7 @@ Indeed, a Tree in Git is distinct from a Blob. While a Blob serves as a containe
 Furthermore, Git offers the capability to assign human-readable names to these pointers. By combining the graph structure formed by Blobs and Trees with the use of reference names, Git can function as a highly efficient and versatile file system.
 
 <p align="center">
-    <img src="tree.png" title="Blob" >
+    <img src="images/tree.png" title="Blob" >
 </p>
 
 Additionally, it is worth highlighting that a Tree can serve as a means to store the state of the Git file system by creating a comprehensive list of all existing Blobs and Trees. This crucial role of Trees becomes evident when examining Commit objects, as they rely on Trees to capture snapshots of the file system at specific points in time.
@@ -48,7 +48,7 @@ Commits serve as objects that capture desired states in Git. As depicted in the 
 These components collectively form a comprehensive snapshot of the Git repository at a specific point in time, enabling effective version control and tracking of changes.
 
 <p align="center">
-    <img src="commit.png" title="Commit" >
+    <img src="images/commit.png" title="Commit" >
 </p>
 
 It is crucial to emphasize that in Git, when there are two states where some data, including Blobs and Trees, is identical, there is no need for data replication. This is because any Tree object, including the one used as a snapshot taker in a Commit object, consists of pointers to specific Blobs and other Trees.
