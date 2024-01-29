@@ -105,7 +105,7 @@ Date:   Mon Jan 29 08:56:05 2024 +0100
 
 To switch from the main branch to feature1, modify the HEAD file and replace its content with `ref: refs/heads/feature1`.
 
-## File Modification
+## Modification
 
 Now, we will proceed to modify the file a.txt and observe the resulting changes. To accomplish this, execute the following commands, which will append the word 'world' to the file a.txt and commit the changes to the repository with the message 'commit 2'.
 
@@ -198,3 +198,18 @@ In the command mentioned above, COMMIT_HASH is a SHA-1 hash of the commit object
 <p align="center">
     <img src="images/6.png" >
 </p>
+
+## Modification using Plumbing Commands
+To modify a.txt using low-level commands, we need to follow these steps:
+
+1. Create a new blob object with the updated content of a.txt.
+2. Create a new tree object that points to the new blob object.
+3. Create a new commit object that references the updated tree object.
+These steps can be executed as illustrated in the following section:
+````
+echo world >> a.txt
+cat a.txt | git hash-object --stdin -w
+git update-index --add --cacheinfo 100644 94954abda49de8615a048f8d2e64b5de848e27a1 a.txt 
+git write-tree
+git commit-tree d4e01edf1e8aa72182ed9449e7d12b5e4df8b201 -m “commit 2” -p 28aff8f8067564e4cc1702ede730ea8d3941b4e8
+````
