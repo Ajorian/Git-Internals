@@ -25,7 +25,7 @@ Git has three types of objects, namely Blobs, Trees, and Commits. It's worth not
 A Blob, abbreviated as Binary Large OBject, is similar to a buffer where raw data can be stored. As the name implies, this Git object lacks any form of metadata, such as timestamps or owner information. Furthermore, it does not possess the ability to point to other objects through SHA-1 hashes. From my perspective, the most effective way to understand a Blob is to envision it as a buffer in which any type of data including text, image, binaries, ... can be stored. The following picture illustrates an imaginary Blob.
 
 <p align="center">
-    <img src="blob.png" width="50%" height="50%" title="Blob" >
+    <img src="blob.png" title="Blob" >
 </p>
 
 ## Trees
