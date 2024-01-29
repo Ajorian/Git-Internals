@@ -94,7 +94,20 @@ tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1
 a.txt
 
 ````
-Returning to the '.git' folder, open the 'HEAD' file. You will observe that its content reads `ref: refs/heads/main`, which refers to the 'main' file. Essentially, 'HEAD' serves as the entry point to our current branch, in this case, 'main'. Therefore, a branch essentially becomes a file, like 'main', that contains a pointer to a commit object.
+Returning to the '.git' folder, open the 'HEAD' file. You will observe that its content reads `ref: refs/heads/main`, which refers to the 'main' file. Essentially, 'HEAD' serves as the entry point to our current branch, in this case, 'main'. Therefore, a branch essentially becomes a file, like 'main', that contains a pointer to a commit object. To verify this, you can simply make a copy of the main file and rename it to feature1. Afterward, executing the git log command will reveal the existence of two distinct branches, as illustrated below:
+````
+> git log
+commit 094ef3623e87f414e1571141c97c7b3444d76ea4 (HEAD -> main, feature1)
+Author: Ali Ajorian <xxx.yyy@gmail.com>
+Date:   Mon Jan 29 08:56:05 2024 +0100
+
+    commit 1
+
+````
+
+To switch from the main branch to feature1, modify the HEAD file and replace its content with `ref: refs/heads/feature1`.
+
+## File Modification
 
 Now, we will proceed to modify the file a.txt and observe the resulting changes. To accomplish this, execute the following commands, which will append the word 'world' to the file a.txt and commit the changes to the repository with the message 'commit 2'.
 
@@ -105,7 +118,7 @@ git commit -m "commit 2"
 ````
 Now, when you list the objects in the database, you will notice the creation of three new objects, which consist of one blob, one tree, and one new commit. This is reflected in the following section:
 ````
-git cat-file --batch-all-objects --batch-check
+> git cat-file --batch-all-objects --batch-check
 094ef3623e87f414e1571141c97c7b3444d76ea4 commit 187
 183dfcf6c5f77a0f5ddaf534bb2ef96e97324513 commit 235
 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 tree 33
