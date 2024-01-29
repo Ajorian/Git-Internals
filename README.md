@@ -229,3 +229,8 @@ Date:   Mon Jan 29 16:17:48 2024 +0100
 
     commit 1
 ````
+This wrong answer is not wrong! Because in our main branch we hold the pointer to the `commit 1` object. So to make things cool we should change the content of our main file in the `.git/refs/heads` with the SHA-1 hash of the last commit object as follows:
+
+````
+echo 033836f71e3da9ad6c0b5a29dd97928a4e7ff44e > .git/refs/heads/main
+````
