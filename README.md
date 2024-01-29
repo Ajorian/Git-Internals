@@ -153,4 +153,8 @@ To store a.txt in the Git database as a blob, Git provides the hash-object comma
 ````
 cat a.txt | git hash-object --stdin -w
 ````
+After storing a.txt in the Git database, the resulting state is as follows:
 
+<p align="center">
+    <img src="images/2.png" >
+</p>
