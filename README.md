@@ -220,6 +220,12 @@ The resulting state is depicted in the following picture:
     <img src="images/7.png" >
 </p>
 
-Now lets use `git log` command to see our repositoy history. But wait why the result is not correct and we cannot see the second commit?
+Now, let's use the git log command to view the history of our repository. However, you may notice that the result is not correct, and the second commit is not visible.
 ````
 >git log
+commit 28aff8f8067564e4cc1702ede730ea8d3941b4e8 (HEAD -> main)
+Author: Ali Ajorian <arastoo.ajorian@gmail.com>
+Date:   Mon Jan 29 16:17:48 2024 +0100
+
+    commit 1
+````
