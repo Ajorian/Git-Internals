@@ -148,5 +148,9 @@ Upon executing the aforementioned commands, an empty repository is created. Now,
     <img src="images/1.png" >
 </p>
 
+To store a.txt in the Git database as a blob, Git provides the hash-object command. To achieve this, you can utilize the cat command to read the content of a.txt and use the pipe symbol | to pass it to the git hash-object command. It's important to note that the --stdin flag is used to read from the input stream, and the -w flag is used to write the generated blob into the Git database.
 
+````
+cat a.txt | git hash-object --stdin -w
+````
 
