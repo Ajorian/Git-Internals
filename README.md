@@ -97,7 +97,7 @@ a.txt
 
 
 
-Returning to the '.git' folder, open the 'HEAD' file. You will observe that its content reads 'ref: refs/heads/main', which refers to the 'main' file. Essentially, 'HEAD' serves as the entry point to our current branch, in this case, 'main'. Therefore, a branch essentially becomes a file, like 'main', that contains a pointer to a commit object.
+Returning to the '.git' folder, open the 'HEAD' file. You will observe that its content reads `ref: refs/heads/main`, which refers to the 'main' file. Essentially, 'HEAD' serves as the entry point to our current branch, in this case, 'main'. Therefore, a branch essentially becomes a file, like 'main', that contains a pointer to a commit object.
 
 Now lets modify file a.txt and see what
 
