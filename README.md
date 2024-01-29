@@ -130,4 +130,15 @@ Please note that the initial blob, sized at 12 bytes, corresponds to the modifie
 
 # Git from Scratch
 
-Having gained a brief understanding of Git's internal structure, let's proceed to create a repository from scratch.
+Having gained a brief understanding of Git's internal structure, let's proceed to create a repository from scratch. 
+As we saw in the prevois sections, every Git repository consists of a directory named `.git`, which contains two subdirectories: 'objects' and 'refs', used to store Git objects and pointers, respectively. Additionally, it includes a file called 'HEAD', which points to the current branch. To initialize a repository `test`, you can create all of these files and folders using the following commands:
+````
+mkdir test
+cd test
+mkdir .git
+mkdir .git/objects
+mkdir .git/refs
+mkdir .git/refs/heads
+echo ref: refs/heads/main > .git/HEAD
+git status
+````
