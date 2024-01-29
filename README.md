@@ -177,3 +177,8 @@ The following picture shows the last state:
 <p align="center">
     <img src="images/4.png" >
 </p>
+
+Now, it's time to create the commit object using the SHA-1 hash of the created tree object. This can be accomplished with the following command:
+````
+git commit-tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 -m “commit 1”
+````
