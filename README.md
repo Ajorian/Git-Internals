@@ -14,12 +14,10 @@ Almost everyone familiar with Git would describe it as version control software 
     <img src="images/graph.png" title="Graph structure of Git objects" >
 </p>
 
-As you can see in the picture, we have some `objects` (circles) with the ability to point to other objects, as well as some arrows or `pointers` (ptr1, ptr2, etc.) that can point to these objects. But wait! What is a pointer, and why is it important to us?
-
-In brief, a pointer is essentially a SHA-1 hash of a Git object. It holds significant importance as it appears throughout the Git internal structure, including data fields of certain objects and files such as the one that stores branches.
+As depicted in the diagram, there are several objects represented by circles, which have the capability to point to other objects through black arrows. Additionally, there are red arrows (ptr1, ptr2, etc.) that can be dynamically created. These red and black arrows are referred to as pointers, which play a crucial role in the internal structure of Git. In essence, a pointer is a SHA-1 hash of a Git object.
 
 ## Objects and Pointers
-Git has three types of objects, namely Blobs, Trees, and Commits. It's worth noting that these objects are represented as files stored within the .git/objects folder. They adhere to a specific naming convention, whereby the name of an object corresponds to the SHA-1 hash of its content. Importantly, this SHA-1 hash serves as a pointer to the respective object. So when you see these SHA-1 hashes you can think of them as simple pointers!
+Git has three types of objects, namely Blobs, Trees, and Commits. It's worth noting that these objects are represented as files stored within the `.git/objects` folder. They adhere to a specific naming convention, whereby the name of an object corresponds to the SHA-1 hash of its content. Importantly, this SHA-1 hash serves as a pointer to the respective object. So when you see these SHA-1 hashes you can think of them as simple pointers!
 
 ## Blobs
 A Blob, abbreviated as Binary Large OBject, is similar to a buffer where raw data can be stored. As the name implies, this Git object lacks any form of metadata, such as timestamps or owner information. Furthermore, it does not possess the ability to point to other objects through SHA-1 hashes. From my perspective, the most effective way to understand a Blob is to envision it as a buffer in which any type of data including text, image, binaries, ... can be stored. The following picture illustrates an imaginary Blob.
