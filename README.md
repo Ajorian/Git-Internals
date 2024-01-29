@@ -86,13 +86,12 @@ ce013625030ba8dba906f756967f9e9ca394464a blob 6
 
 To examine the content of each of the aforementioned objects, you can employ the command `git show OBJ_HASH`, where OBJ_HASH represents the SHA-1 hash of the desired object. For instance, when handling the blob object, the output will present the content "hello". Similarly, executing the command will unveil the contents of 'a.txt' for the tree object as it is listed below:
 ````
-git show ce013625030ba8dba906f756967f9e9ca394464a
+> git show ce013625030ba8dba906f756967f9e9ca394464a
+hello
 
-> hello
-
-git show 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 
-> tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 
-> a.txt
+> git show 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1
+tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 
+a.txt
 
 ````
 
