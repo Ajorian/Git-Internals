@@ -158,3 +158,13 @@ After storing a.txt in the Git database, the resulting state is as follows:
 <p align="center">
     <img src="images/2.png" >
 </p>
+
+To stage the latest change, which involves adding a.txt to the staging area, the update-index command is utilized in the following manner:
+
+````
+git update-index --add --cacheinfo 100644 ce013625030ba8dba906f756967f9e9ca394464a a.txt
+````
+Note that ce013625030ba8dba906f756967f9e9ca394464a represents the SHA-1 hash of the created blob object. The resulting state would be as follows:
+<p align="center">
+    <img src="images/3.png" >
+</p>
